@@ -1,0 +1,50 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: report-generation
+  name: report-generation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: report-generation
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  revisionHistoryLimit: 5
+  template:
+    metadata:
+      labels:
+        app: report-generation
+    spec:
+      containers:
+      - image: beaware/report-generation:IMAGE_TAG
+        imagePullPolicy: Always
+        name: report-generation
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 200m
+            memory: 1024Mi
+        env:
+          - name: SECRET_MH_API_KEY
+            valueFrom:
+             secretKeyRef:
+              name: mh-secret2
+              key: api_key
+          - name: SECRET_MH_BROKERS
+            valueFrom:
+             secretKeyRef:
+              name: mh-secret2
+              key: kafka_brokers_sasl
+          - name: SECRET_MONGO_URI
+            valueFrom:
+             secretKeyRef:
+              name: mongo-secret
+              key: uri
