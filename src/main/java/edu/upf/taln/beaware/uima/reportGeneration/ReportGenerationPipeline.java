@@ -17,8 +17,7 @@ import edu.upf.taln.beaware.uima.consumer.BeAwareKafkaReportGenerator;
 import edu.upf.taln.beaware.uima.reader.BeAwareKafkaObserver;
 
 /**
- * In this pipeline, we use dbpedia-spotlight to annotate entities.
- * It is configured to use the public endpoint, but should preferably point to a local one.
+ * This pipeline generates dummy reports upon request
  */
 public class ReportGenerationPipeline {
 
