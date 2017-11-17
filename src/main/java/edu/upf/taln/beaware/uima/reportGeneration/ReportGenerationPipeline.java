@@ -64,13 +64,13 @@ public class ReportGenerationPipeline {
 		//.queryString("log", "starting pipeline")
 		//.asString();
 		for (JCas jcas : pipeline) {
-			DocumentMetaData meta = selectSingle(jcas, DocumentMetaData.class);
+			//DocumentMetaData meta = selectSingle(jcas, DocumentMetaData.class);
 			//Unirest.get("http://glicom.upf.edu/beaware")
 			//	.queryString("log", "processing")
 			//	.queryString("text", jcas.getDocumentText())
 			//	.queryString("id", meta.getDocumentId())
 			//	.asString();
-			logger.info(jcas.getDocumentText());
+			//logger.info(jcas.getDocumentText());
 		}
 	}
 
