@@ -13,7 +13,6 @@ import org.apache.uima.fit.pipeline.JCasIterable;
 import org.apache.uima.jcas.JCas;
 
 import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
-import edu.upf.taln.beaware.uima.consumer.BeAwareKafkaConsumer;
 import edu.upf.taln.beaware.uima.consumer.BeAwareKafkaReportGenerator;
 import edu.upf.taln.beaware.uima.reader.BeAwareKafkaObserver;
 
