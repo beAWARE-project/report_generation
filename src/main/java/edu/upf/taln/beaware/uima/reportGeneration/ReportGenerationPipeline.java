@@ -46,9 +46,6 @@ public class ReportGenerationPipeline {
 				BeAwareKafkaObserver.PARAM_GROUPID, "report-generator"
 				);
 		AnalysisEngineDescription writer = createEngineDescription(BeAwareKafkaReportGenerator.class,
-				BeAwareKafkaReportGenerator.PARAM_MONGOURI, mongoUri,
-				BeAwareKafkaReportGenerator.PARAM_MONGODB, mongoDb,
-				BeAwareKafkaReportGenerator.PARAM_FIELD, "report-generation",
 				BeAwareKafkaReportGenerator.PARAM_KAFKATOPIC,"TOP040_TEXT_REPORT_GENERATED",
 				BeAwareKafkaReportGenerator.PARAM_KAFKABROKERS, kafkaBrokers,
 				BeAwareKafkaReportGenerator.PARAM_KAFKAKEY, kafkaApiKey
