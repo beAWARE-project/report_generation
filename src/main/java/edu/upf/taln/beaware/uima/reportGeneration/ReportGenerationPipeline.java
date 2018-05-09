@@ -25,8 +25,6 @@ public class ReportGenerationPipeline {
 
 		Logger logger = Logger.getLogger(ReportGenerationPipeline.class.toString());
 
-		String mongoDb = "BeAware";
-		String mongoUri = System.getenv("SECRET_MONGO_URI");
 		String kafkaBrokers = System.getenv("SECRET_MH_BROKERS");
 		String kafkaApiKey = System.getenv("SECRET_MH_API_KEY");
 
