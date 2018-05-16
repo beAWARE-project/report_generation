@@ -3,7 +3,6 @@ package edu.upf.taln.beaware.uima.reportGeneration;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.apache.uima.fit.factory.CollectionReaderFactory.createReaderDescription;
-import static org.apache.uima.fit.util.JCasUtil.selectSingle;
 
 import java.util.logging.Logger;
 
@@ -12,7 +11,6 @@ import org.apache.uima.collection.CollectionReaderDescription;
 import org.apache.uima.fit.pipeline.JCasIterable;
 import org.apache.uima.jcas.JCas;
 
-import de.tudarmstadt.ukp.dkpro.core.api.metadata.type.DocumentMetaData;
 import edu.upf.taln.beaware.uima.consumer.BeAwareKafkaReportGenerator;
 import edu.upf.taln.beaware.uima.reader.BeAwareKafkaObserver;
 
