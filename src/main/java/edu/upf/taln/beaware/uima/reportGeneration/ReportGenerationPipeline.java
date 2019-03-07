@@ -11,8 +11,9 @@ import org.apache.uima.collection.CollectionReaderDescription;
 import org.apache.uima.fit.pipeline.JCasIterable;
 import org.apache.uima.jcas.JCas;
 
-import edu.upf.taln.beaware.uima.consumer.BeAwareKafkaReportGenerator;
-import edu.upf.taln.beaware.uima.reader.BeAwareKafkaObserver;
+import edu.upf.taln.beaware.consumer.BeAwareKafkaReportGenerator;
+import edu.upf.taln.beaware.reader.BeAwareKafkaObserver;
+
 
 /**
  * This pipeline generates dummy reports upon request
@@ -35,14 +36,14 @@ public class ReportGenerationPipeline {
 
 		// setup components
 		CollectionReaderDescription reader = createReaderDescription(BeAwareKafkaObserver.class,
-				BeAwareKafkaObserver.PARAM_KAFKATOPIC,"TOP030_REPORT_REQUESTED",
+				BeAwareKafkaObserver.PARAM_KAFKATOPIC,"TOP030_REPORT_REQUESTED,TOP033_SUMMARY_REQUESTED",
 				BeAwareKafkaObserver.PARAM_KAFKABROKERS, kafkaBrokers,
 				BeAwareKafkaObserver.PARAM_KAFKASEEKTOEND, true,
 				BeAwareKafkaObserver.PARAM_KAFKAKEY, kafkaApiKey,
 				BeAwareKafkaObserver.PARAM_GROUPID, "report-generator"
 				);
 		AnalysisEngineDescription writer = createEngineDescription(BeAwareKafkaReportGenerator.class,
-				BeAwareKafkaReportGenerator.PARAM_KAFKATOPIC,"TOP040_TEXT_REPORT_GENERATED",
+				//BeAwareKafkaReportGenerator.PARAM_KAFKATOPIC,"TOP040_TEXT_REPORT_GENERATED",
 				BeAwareKafkaReportGenerator.PARAM_KAFKABROKERS, kafkaBrokers,
 				BeAwareKafkaReportGenerator.PARAM_KAFKAKEY, kafkaApiKey
 				);
