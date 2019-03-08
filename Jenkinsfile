@@ -6,16 +6,19 @@ node ('beaware-jenkins-slave') {
     }
 
     stage ('Compile (Maven)') {
-        sh 'mvn clean package -U'
+        //sh 'mvn clean package -U'
+       	sh 'echo skipping mvn compile'
     }
 
     stage ('Build docker image') {
-		sh 'docker build -t beaware/report-generation:${BUILD_NUMBER} .'
+		//sh 'docker build -t beaware/report-generation:${BUILD_NUMBER} .'
+		sh 'echo skipping docker build'
     }
 
     stage ('Push docker image') {
         withDockerRegistry([credentialsId: 'dockerhub-credentials']) {
-            sh 'docker push beaware/report-generation:${BUILD_NUMBER}'
+            //sh 'docker push beaware/report-generation:${BUILD_NUMBER}'
+            sh 'echo skipping docker push'
         }
     }
 

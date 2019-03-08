@@ -21,7 +21,7 @@ spec:
         app: report-generation
     spec:
       containers:
-      - image: beaware/report-generation:IMAGE_TAG
+      - image: maven-taln.upf.edu/beaware/report-generation:201903081304
         imagePullPolicy: Always
         name: report-generation
         ports:
@@ -31,7 +31,7 @@ spec:
         resources:
           requests:
             cpu: 200m
-            memory: 1024Mi
+            memory: 2048Mi
         env:
           - name: SECRET_MH_API_KEY
             valueFrom:
