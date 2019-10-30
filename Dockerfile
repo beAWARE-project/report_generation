@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:9-jre
 
 COPY target/report-generation-standalone.jar .
 

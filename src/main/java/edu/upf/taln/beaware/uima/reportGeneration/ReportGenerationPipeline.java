@@ -40,7 +40,8 @@ public class ReportGenerationPipeline {
 		AnalysisEngineDescription writer = createEngineDescription(GenerationKafkaConsumer.class,
 				//GenerationKafkaConsumer.PARAM_KAFKATOPIC,"TOP040_TEXT_REPORT_GENERATED",
 				GenerationKafkaConsumer.PARAM_KAFKABROKERS, kafkaBrokers,
-				GenerationKafkaConsumer.PARAM_KAFKAKEY, kafkaApiKey
+				GenerationKafkaConsumer.PARAM_KAFKAKEY, kafkaApiKey,
+				GenerationKafkaConsumer.PARAM_GROUPID, groupId
 				);
 
 		// configure pipeline
