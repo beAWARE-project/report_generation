@@ -13,6 +13,7 @@ import org.apache.uima.fit.pipeline.JCasIterable;
 import org.apache.uima.jcas.JCas;
 
 import edu.upf.taln.beaware.kafka.GenerationKafkaConsumer;
+import edu.upf.taln.beaware.kafka.GenerationKafkaReader;
 import edu.upf.taln.beaware.kafka.KafkaReader;
 
 
@@ -30,12 +31,12 @@ public class ReportGenerationPipeline {
 		String groupId = Optional.ofNullable(System.getenv("KAFKA_GROUPID")).orElse("report-generator");
 
 		// setup components
-		CollectionReaderDescription reader = createReaderDescription(KafkaReader.class,
-				KafkaReader.PARAM_KAFKATOPIC,"TOP030_REPORT_REQUESTED,TOP033_SUMMARY_REQUESTED",
-				KafkaReader.PARAM_KAFKABROKERS, kafkaBrokers,
-				KafkaReader.PARAM_KAFKASEEKTOEND, true,
-				KafkaReader.PARAM_KAFKAKEY, kafkaApiKey,
-				KafkaReader.PARAM_GROUPID, groupId
+		CollectionReaderDescription reader = createReaderDescription(GenerationKafkaReader.class,
+				GenerationKafkaReader.PARAM_KAFKATOPIC,"TOP030_REPORT_REQUESTED,TOP033_SUMMARY_REQUESTED",
+				GenerationKafkaReader.PARAM_KAFKABROKERS, kafkaBrokers,
+				GenerationKafkaReader.PARAM_KAFKASEEKTOEND, true,
+				GenerationKafkaReader.PARAM_KAFKAKEY, kafkaApiKey,
+				GenerationKafkaReader.PARAM_GROUPID, groupId
 				);
 		AnalysisEngineDescription writer = createEngineDescription(GenerationKafkaConsumer.class,
 				//GenerationKafkaConsumer.PARAM_KAFKATOPIC,"TOP040_TEXT_REPORT_GENERATED",

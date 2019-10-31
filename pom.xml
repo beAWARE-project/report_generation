@@ -11,18 +11,19 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<beaware.pipeline.version>3.1.0-SNAPSHOT</beaware.pipeline.version>
 	</properties>
 	<name>report-generation</name>
 	<dependencies>
 		<dependency>
 			<groupId>edu.upf.taln.beaware.en</groupId>
 			<artifactId>beaware-en-generation</artifactId>
-			<version>3.0.0</version>
+			<version>${beaware.pipeline.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>edu.upf.taln.beaware</groupId>
 			<artifactId>beaware-kafka</artifactId>
-			<version>3.0.0</version>
+			<version>${beaware.pipeline.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.uima</groupId>
@@ -39,7 +40,25 @@
 			<artifactId>unirest-java</artifactId>
 			<version>1.4.9</version>
 		</dependency>
+		<dependency>
+			<groupId>edu.upf.taln.beaware.en</groupId>
+			<artifactId>beaware-en-generation</artifactId>
+			<version>${beaware.pipeline.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.upf.taln.beaware.es</groupId>
+			<artifactId>beaware-es-generation</artifactId>
+			<version>${beaware.pipeline.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.upf.taln.beaware.it</groupId>
+			<artifactId>beaware-it-generation</artifactId>
+			<version>${beaware.pipeline.version}</version>
+		</dependency>
 	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<!-- FORCE JACKSON VERSION -->
