@@ -14,7 +14,6 @@ import org.apache.uima.jcas.JCas;
 
 import edu.upf.taln.beaware.kafka.GenerationKafkaConsumer;
 import edu.upf.taln.beaware.kafka.GenerationKafkaReader;
-import edu.upf.taln.beaware.kafka.KafkaReader;
 
 
 /**
