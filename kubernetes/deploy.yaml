@@ -21,7 +21,7 @@ spec:
         app: report-generation
     spec:
       containers:
-      - image: maven-taln.upf.edu/beaware/report-generation:20191106
+      - image: maven-taln.upf.edu/beaware/report-generation:20191108
         imagePullPolicy: Always
         name: report-generation
         ports:
